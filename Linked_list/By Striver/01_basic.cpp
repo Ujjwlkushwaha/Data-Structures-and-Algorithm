@@ -13,7 +13,7 @@ class Node{
 	// initialize the constructor which default value;
     Node(int d ){
       this->data = d;
-      next = nullptr; // agar nullptr se na chale to => { nullptr -> 0 }
+      this->next = NULL; 
     }
 };
 
@@ -37,7 +37,9 @@ int main(){
   while(temp != nullptr)
     {
     	// printing the every node of the list 
-      cout<<temp->data<<" ";
+      cout<< temp->data <<" ";
+
+      // used to jump one node to next node
       temp = temp->next;
     }
 }

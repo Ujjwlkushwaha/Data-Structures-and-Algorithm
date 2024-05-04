@@ -7,17 +7,18 @@ class Node{
         Node * next;
 
         // initialization List
-        Node(int data) : data(data) , next(nullptr) {}
+        Node(int data) : data(data) , next(NULL) {}
 };
 
 class LinkedList{
     Node* head;
 
     public:
-        LinkedList() : head(nullptr){}
+        LinkedList() : head(NULL){}
 
     // insert at the end of the linked list
-        void append(int data){
+        void append(int data)
+        {
             Node* newNode = new Node(data);
 
             if(head == nullptr){
@@ -44,7 +45,8 @@ class LinkedList{
     // printing the list
         void print_list(){
             Node* temp = head;
-            while(temp!=nullptr){
+            while(temp != NULL)
+            {
                 cout<<temp->data << "-> ";
                 temp = temp->next;
             }

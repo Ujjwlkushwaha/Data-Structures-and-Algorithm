@@ -7,27 +7,27 @@ class Node{
         Node * next;
 
         // initialization List
-        Node(int data) : data(data) , next(nullptr) {}
+        Node(int data) : data(data) , next(NULL) {}
 };
 
 class LinkedList{
     Node* head;
 
     public:
-        LinkedList() : head(nullptr){}
+        LinkedList() : head(NULL){}
 
     // insert at the end of the linked list
         void append(int data)
         {
             Node* newNode = new Node(data);
 
-            if(head == nullptr){
+            if(head == NULL){
                 head = newNode;
                 return;
             }
 
             Node* temp = head;
-            while(temp->next != nullptr){
+            while(temp->next != NULL){
                 temp = temp->next;
             }
 
@@ -43,23 +43,40 @@ class LinkedList{
        }
 
     //insert at given position in the linked list
-        void insert(int data , int pos)
+        void insertAtPos(int data , int pos)
         {
             Node* newNode = new Node(data);
 
-            Node *temp = head;
-            for(int i = 1 ; i<pos-1 ; i++){
-                temp = temp->next;
+            if(pos ==  1){
+                insertAtbegining(data);
+                return;
             }
 
+            if(pos == size()+1){
+                append(data);
+                return;
+            }
+
+            if(pos <= 0 || pos > size()+1){
+                 cout << "invalid position !" << endl;
+                 return;
+            }
+
+            Node *temp = head;
+            int c = 1;
+            while(temp->next != NULL && c != pos-1){
+                c++;
+                temp = temp->next;
+            }
             newNode->next = temp->next;
             temp->next = newNode;
         }
 
+    // return size of the list
         int size(){
             Node* temp = head;
             int count = 0;
-            while(temp!=nullptr){
+            while(temp != NULL){
                 count++;
                 temp =temp->next;
             }
@@ -70,7 +87,8 @@ class LinkedList{
     // printing the list
         void print_list(){
             Node* temp = head;
-            while(temp!=nullptr){
+            while(temp!=NULL)
+            {
                 cout<<temp->data << "-> ";
                 temp = temp->next;
             }
@@ -79,23 +97,21 @@ class LinkedList{
         }
 };
 
-int main(){
-    LinkedList *list = new LinkedList();
+int main()
+{
+    LinkedList ls; 
+    ls.append(10);
+    ls.append(20);
+    ls.append(30);
+    ls.append(40);
+    ls.append(50);
 
-    list->append(10);
-    list->append(20);
-    list->append(30);
-    list->append(40);
+    ls.print_list();
 
-    list->insert(5 , 1);
-    list->insert(15 , 2);
-    list->insert(25 , 4);
-    list->insert(35 , 6);
-    list->insert(45 , 8);
-    list->insert(50 , 9);
+    // insert at position
+    ls.insertAtPos(5 , 1);
+    ls.print_list();
 
-    cout << "sizeof linked list :: " << list->size()<< endl;
-
-    // printing the list
-    list->print_list();
+    ls.insertAtPos(1000 , 7);
+    ls.print_list();
 }

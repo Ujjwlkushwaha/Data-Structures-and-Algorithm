@@ -6,17 +6,19 @@ class Node{
        int data;
        Node* next;
 
-       Node(int data) : data(data) ,next(nullptr){}
+    // initializer_list
+       Node(int data) : data(data) ,next(NULL){}
 };
 
 class LinkedList{
     Node* head;
     public:
     LinkedList(){
-        head = nullptr;
+        head = NULL;
     }
 
-    void insertAtbegining(int data){
+    void insertAtbegining(int data)
+    {
         Node* newNode = new Node(data);
         newNode->next = head;
         head = newNode;
@@ -25,7 +27,8 @@ class LinkedList{
     void printList(){
         
         Node* temp = head;
-        while(temp != nullptr){
+        while(temp != NULL)
+        {
             cout<< temp->data <<" -> ";
             temp = temp->next;
         }
