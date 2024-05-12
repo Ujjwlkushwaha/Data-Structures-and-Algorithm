@@ -45,14 +45,15 @@ class LinkedList{
     //insert at given position in the linked list
         void insertAtPos(int data , int pos)
         {
-            Node* newNode = new Node(data);
-
             if(pos ==  1){
+                Node* newNode = new Node(data);
                 insertAtbegining(data);
                 return;
             }
 
-            if(pos == size()+1){
+            if(pos == size()+1)
+            {
+                Node* newNode = new Node(data);
                 append(data);
                 return;
             }
@@ -62,9 +63,10 @@ class LinkedList{
                  return;
             }
 
+            Node* newNode = new Node(data);
             Node *temp = head;
             int c = 1;
-            while(temp->next != NULL && c != pos-1){
+            while(temp->next != NULL && c < pos-1){
                 c++;
                 temp = temp->next;
             }
@@ -114,4 +116,10 @@ int main()
 
     ls.insertAtPos(1000 , 7);
     ls.print_list();
+
+    ls.insertAtPos(125 , 5);
+    ls.print_list();
+
+    ls.insertAtPos(123,2);
+    ls.print_list();  
 }
