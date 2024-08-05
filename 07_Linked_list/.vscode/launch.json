@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Linkedlist",
+            "request": "launch",
+            "mainClass": "Linkedlist",
+            "projectName": "07_Linked_list_9777d268"
+        },
+        {
+            "type": "java",
+            "name": "Node",
+            "request": "launch",
+            "mainClass": "Node",
+            "projectName": "07_Linked_list_9777d268"
+        },
+        {
             "name": "(gdb) Attach",
             "type": "cppdbg",
             "request": "attach",
@@ -24,6 +38,5 @@
                 }
             ]
         }
-
     ]
 }
