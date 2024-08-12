@@ -97,7 +97,6 @@ class DoublyLinkedList
 
              if(pos == 1){
                 node* temp = head;
-                head = head->next;
                 head->pre = NULL;
                 delete temp;
                 return;
