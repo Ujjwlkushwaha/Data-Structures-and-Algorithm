@@ -76,17 +76,13 @@ Node* reverseKgroup(Node* &head , int k){
 
 // base case 1
 
-    if(k == 0 ){
+    if(k == 0 or k > getLen(head)){
         return head;
     }
 
     if(head == NULL){
         cout << "list is empty, task denay!" << endl;
         return NULL;
-    }
-
-    if(k > getLen(head)){
-        return head;
     }
 
     Node* pre = NULL;
