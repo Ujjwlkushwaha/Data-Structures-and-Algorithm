@@ -39,13 +39,17 @@ void print(Node* head) {
         cout << endl;
 }
 
-// Merge two sorted linkedlist
+// Merge two sorted linkedlist iteratively
 Node* mergeList(Node* head1 , Node* head2)
 {
+    // base cases
     if(head1 == NULL) return head2;
     if(head2 == NULL) return head1;
 
+    // used to make merged list
     Node* ans = new Node(-1);
+
+    // ptr is used to traverse linkedlist only
     Node* ptr = ans;
 
     while(head1 != NULL and head2 != NULL){
@@ -73,6 +77,24 @@ Node* mergeList(Node* head1 , Node* head2)
     return ans->next;
 }
 
+Node* mergeLLrecursively(Node* head1 , Node* head2){
+
+    if(head1 == NULL)return head2;
+    if(head2 == NULL)return head1;
+
+    Node* ansList = NULL;
+    if(head1->data <= head2->data)
+    {
+        ansList = head1;
+        head1->next = mergeLLrecursively(head1->next , head2);
+    }else
+    {
+        ansList = head2;
+        head2->next = mergeLLrecursively(head1 , head2->next);
+    }
+
+    return ansList;
+}
 
 int main(){
 
@@ -97,7 +119,9 @@ int main(){
     print(head2);
 
     cout << "After merging both linkedlist :: " << endl;
-    head1 = mergeList(head1 , head2);
+    // head1 = mergeList(head1 , head2);
+
+    head1 = mergeLLrecursively(head1 , head2);
     print(head1);
     
 
