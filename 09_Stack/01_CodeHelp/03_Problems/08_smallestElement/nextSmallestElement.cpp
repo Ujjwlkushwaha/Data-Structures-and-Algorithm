@@ -4,7 +4,7 @@
 
 using namespace std;
 
-vector<int> findLargestRectangle(vector<int> arr) {
+vector<int> nextSmallestElement(vector<int> arr) {
     stack<int> s;
     vector<int> ans(arr.size());
 
@@ -25,13 +25,11 @@ vector<int> findLargestRectangle(vector<int> arr) {
 
 int main() {
     vector<int> heights = {2, 1, 5, 6, 2, 3};
-    vector<int> result = findLargestRectangle(heights);
+    vector<int> result = nextSmallestElement(heights);
     
     for (int i = 0; i < result.size(); i++) 
     {
         cout << result[i] << " ";
     }  //1 -1 2 2 -1 -1 
-
-
     return 0;
 }
