@@ -19,6 +19,7 @@ class Queue
     int *queue;
 
 public:
+// constructor
     Queue(int size)
     {
         this->front = -1;
@@ -97,8 +98,7 @@ public:
     {
         cout << " Back = " << queue[rear] << endl;
     }
-}
-;
+};
 
 int main()
 {
@@ -120,5 +120,5 @@ int main()
 
     q1.deQueue();
     q1.getFront();
-
 }
+

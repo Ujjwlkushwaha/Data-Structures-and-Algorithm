@@ -1,8 +1,8 @@
-// 📌 Interleave first and second half of queue
+    // 📌 Interleave first and second half of queue
 #include <bits/stdc++.h>
 using namespace std;
 
-void printStack(queue<int> st)
+void printQueue(queue<int> st)
 {
     while (!st.empty())
     {
@@ -68,5 +68,5 @@ int main()
     interleaveQueue(q);
 
     cout << "Interleaved Queue: ";
-    printStack(q);
+    printQueue(q);
 }
