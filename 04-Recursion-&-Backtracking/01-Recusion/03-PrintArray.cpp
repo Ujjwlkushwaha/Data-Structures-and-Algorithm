@@ -12,14 +12,10 @@ void printArray(int arr[] , int size , int i)
 
 void printReveseArray(int arr[] , int size , int i)
 {   
-
         // base case
         if(i == size)return;
-
         printReveseArray(arr , size, i + 1);
-
         cout<< arr[i] << " " ;
-
 }
 int main()
 {
@@ -31,6 +27,6 @@ int main()
     int i = 0;
     printArray(arr , s , i);
 
-    printReveseArray(arr main  )
+    printReveseArray(arr , s , i);
 
 }
