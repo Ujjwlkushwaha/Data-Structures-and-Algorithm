@@ -39,38 +39,40 @@ vector<int> commonElmenets(vector<int> A, vector<int> B, vector<int> C)
     return ans;
 }
 
-
 // ===========✅ Optimized Approach===============
 vector<int> commonElmenetsInSortedArray(vector<int> A, vector<int> B, vector<int> C)
 {
-    int i = 0 ;
+    int i = 0;
     int j = 0;
     int k = 0;
 
     vector<int> ans;
 
-    while( i < A.size() and j < B.size() and k < C.size() )
+    while (i < A.size() and j < B.size() and k < C.size())
     {
-        if( A[i] == B[j] and B[j] == C[k])
+        if (A[i] == B[j] and B[j] == C[k])
         {
-            ans.push_back( A[i]) ;
-            i++;j++;k++;
-        }
-        else if( A[i] < B[j])
-        {
+            ans.push_back(A[i]);
             i++;
-        }else if( B[j] < C[k])
-        {
             j++;
-        }else{
             k++;
         }
-
+        else if (A[i] < B[j])
+        {
+            i++;
+        }
+        else if (B[j] < C[k])
+        {
+            j++;
+        }
+        else
+        {
+            k++;
+        }
     }
 
     return ans;
 }
-
 
 // =========== ✅ Driver Code =====================
 
