@@ -39,6 +39,7 @@ void insertNode(Node* &head , int data){
     temp->next = newNode;
 }
 
+
 int getLen(Node* head){
     if(head == NULL){
         return 0;
@@ -53,6 +54,7 @@ int getLen(Node* head){
 
     return c;
 }
+
 
 void printData(Node* head){
     if(head == NULL){
@@ -110,7 +112,7 @@ int main()
 {
 
     Node* head = NULL;
-    int arr[] = {3,4,5,6,7,8,9,10};
+    int arr[] = {3,5, 4, 7, 7, 9, 8, 3, 1, 8, 6};
 
     int s = sizeof(arr) / sizeof(arr[0]);
 
@@ -120,6 +122,6 @@ int main()
 
     printData(head);
 
-    head = reverseKgroup(head , 2);
+    head = reverseKgroup(head , 3);
     printData(head);
 }
