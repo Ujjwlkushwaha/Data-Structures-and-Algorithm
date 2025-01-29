@@ -34,22 +34,19 @@ public:
         // base case
         if (e == 0)
             return 1;
+
+        // if power is nigative
         if (e < 0)
-            return 1 / power(b, -e);
+            return 1 / power(b, -e); // reciprocle kar do
 
-        double ans = power(b, e / 2);
+        double ans = power(b, e / 2); //  2^8 => 2^4 * 2^4 => 2^2 * 2^2 * 2^2 * 2^2
 
-        if (e % 2 == 0)
-        {
-            return ans * ans;
-        }
+        if (e % 2 == 0)       // iff power is even
+            return ans * ans;        // 2^8 = 2^4 * 2^4
         else
-        {
-            return ans * ans * b;
-        }
+            return ans * ans * b; // 2^9 = 2^4 * 2^4 * 2
     }
 };
-
 
 int main()
 {
