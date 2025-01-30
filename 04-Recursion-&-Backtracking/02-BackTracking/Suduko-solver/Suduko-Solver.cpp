@@ -2,11 +2,27 @@
 #include <vector>
 using namespace std;
 
+/*
+    ✅Solve the Sudoku
+        Difficulty: HardAccuracy: 37.98%Submissions: 101K+Points: 8
+
+    Given an incomplete Sudoku configuration in terms of a 9x9  2-D interger square matrix, mat[][], the task is to solve the Sudoku. It is guaranteed that the input Sudoku will have exactly one solution.
+
+A sudoku solution must satisfy all of the following rules:
+
+    Each of the digits 1-9 must occur exactly once in each row.
+    Each of the digits 1-9 must occur exactly once in each column.
+    Each of the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.
+Note: Zeros represent blanks to be filled with numbers 1-9, while non-zero cells are fixed and cannot be changed.
+*/
+
+
 #define N 9
 
 // Function to check if it's safe to place a number in a given cell
 bool isSafe(vector<vector<int>> &grid, int row, int col, int num)
 {
+    // check the num is present in row or col
     for (int x = 0; x < grid[0].size(); x++)
     {
         if (grid[row][x] == num || grid[x][col] == num)
@@ -16,6 +32,8 @@ bool isSafe(vector<vector<int>> &grid, int row, int col, int num)
     }
 
     int startRow = row - row % 3, startCol = col - col % 3;
+
+    // check 3*3 grid me same number hai ya nhi
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
