@@ -84,5 +84,5 @@ int getHeight( Node* root)
         cout << "Level order traversal of the tree: " << endl;
         levelOrder(root);
 
-        cout << "Height of the tree " << getHeight(root) << endl;
+        cout << "Height of the tree " << getHeight(root)-1 << endl;
     }
