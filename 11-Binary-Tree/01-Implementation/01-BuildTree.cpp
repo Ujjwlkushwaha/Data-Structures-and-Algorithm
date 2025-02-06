@@ -13,7 +13,7 @@ class Node{
 };
 
 // 📌📌 Building tree 
-Node* buildTree( Node* root)
+Node* buildTree( Node* root )
 {
     int data;
     cout << "Enter data (-1 for no node): ";
