@@ -85,8 +85,6 @@ void bountryTraversal( TreeNode* root)
     if( root->right != NULL )
     {
         printRightBoundry( root->right );
-    }else{
-        printRightBoundry( root->left );
     }
 }
 
@@ -174,3 +172,5 @@ int main()
     bountryTraversal(root);
     
 }
+
+// 1, 2, N, 4, 9, 6, 5, N, 3, N, N, N, N 7, 8
