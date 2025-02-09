@@ -38,3 +38,5 @@ int maxPathSum(Node *root)
     int sum = root->data; // store max sum
     getMaxSum( root , sum );
 }
+
+// GFG : https://www.geeksforgeeks.org/problems/maximum-path-sum-from-any-node/1
