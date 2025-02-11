@@ -30,7 +30,7 @@ using namespace std;
 class Solution
 {
 public:
-    void solve(int colo, int n, vector<vector<int>> &ans, vector<int> &sol, vector<bool>&col, vector<bool> &ldiag, vector<bool> &rdiag)
+    void solve(int colo, int n, vector<vector<int>> &ans, vector<int> &sol, vector<bool> &col, vector<bool> &ldiag, vector<bool> &rdiag)
     {
         for (int i = 0; i < n; i++)
         {
@@ -48,8 +48,8 @@ public:
                 rdiag[i + colo] = true;
 
                 solve(colo + 1, n, ans, sol, col, ldiag, rdiag);
-            
-            // backtrack
+
+                // backtrack
                 sol.pop_back();
                 col[i] = false;
                 ldiag[colo - i + n - 1] = false;
@@ -57,6 +57,8 @@ public:
             }
         }
     }
+
+    
     vector<vector<int>> nQueen(int n)
     {
         // code here
@@ -92,5 +94,5 @@ int main()
         cout << endl;
     }
 
-    cout << "~"<< "\n";
+    cout << "~" << "\n";
 }
