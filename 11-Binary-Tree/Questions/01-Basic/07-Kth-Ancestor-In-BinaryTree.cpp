@@ -1,5 +1,4 @@
-// C++ program for finding
-// kth ancestor of a particular node
+
 #include <bits/stdc++.h>
 using namespace std;
 
