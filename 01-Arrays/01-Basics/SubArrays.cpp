@@ -38,7 +38,7 @@ int totalNoOFSubarray(int n)
     cout << "There are " << totalNoOfSubArrays << " SubArrays";
 }
 
-int maxSubArray(vector<int> &nums)
+int maxSumSubArray(vector<int> &nums)
 {
     // use kadane's algorithm
 
